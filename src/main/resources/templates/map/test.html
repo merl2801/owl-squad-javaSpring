@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Map</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/test.css}" />
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script th:src="@{/js/sample.js}"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-logo-menu">
+    <div id="nav-drawer">
+        <input id="nav-input" type="checkbox" class="nav-unshown">
+        <label id="nav-open" for="nav-input"><span></span></label>
+        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <div id="nav-content"><ul>
+          <li>
+              <h3 href="#">RETURN</h3>
+          </li>
+          <li>
+              <a th:href="@{/login}" style="text-decoration: none;"><h3>LOGIN</h3></a>
+          </li>
+          <li>
+              
+              <a th:href="@{/}" style="text-decoration: none;"><h3>HOME</h3></a>
+          </li>
+      </ul>
+    </div>
+    </div>
+    <div class="logo-area">Owl Search</div>
+    </div>
+  </header>
+  <div>
+    <span>中心地点</span>
+    <input type="text" id="address">
+    <span>半径</span>
+    <input type="text" id="radius" value="1000">
+    <button th:onclick="searchShops()">Search</button>
+  </div>
+  <div id="map"></div>
+
+  <!-- <script th:src="@{/js/sample.js}"></script> -->
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
+  
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB6FrKwW-2S9R_OxHGIP3EKzb03zB55oU&v=weekly"
+    defer></script>
+</body>
+
+</html>

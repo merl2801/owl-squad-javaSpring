@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+body {
+    background: #ecf0f3;
+}
+
+
+.max_frame {
+    max-width: 936px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 0 0.2rem;
+}
+
+.side_bar_frame {
+    max-width: 575px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 12px;
+}
+
+.side_bar_content {
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* 絞り込み */
+.condition_name {
+    font-size: calc(1.275rem + .3vw);
+    padding: 0.25rem;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+}
+
+.condition_display_flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .condition_column {
+
+} */
+
+
+/* マーケットコンテンツ */
+.one_market_content {
+    margin-bottom: 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+}
+
+/* 店舗名 */
+.store_name {
+    /* bootstrapのfs-4フォントサイズ */
+    font-size: calc(1.275rem + .3vw);
+    padding: 0.25rem;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+}
+
+/* 詳細の枠 */
+.store_inside {
+    padding: 0.5rem 0;
+}
+
+/* 店舗イメージ */
+.store_image_frame {
+    min-width: 18rem;
+    text-align: center;
+}
+.store_image_frame #store_image{
+    max-width: 16rem;
+}
+
+.store_detail ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 店舗説明 */
+.store_detail {
+    padding: 0.2rem;
+}
+
+
+/* スマホ・タブレット */
+
+@media (max-width: 575px) {
+
+    .side-bar {
+        margin-bottom: 0.5rem;
+    }
+
+
+    /* 店舗一覧 */
+    .store_name {
+        justify-content: center;
+    }
+
+    .store_image_frame {
+        padding-bottom: 0.5rem;
+    }
+
+    /* イメージを制限(小さく)する */
+    .store_image_frame #store_image {
+        max-width: 18em;
+    }
+
+}
+
+
+/* pc */
+
+@media (min-width: 575px) {
+
+    /* コンテンツ全体 */
+    .content-display-flex {
+        display: flex;
+    }
+
+
+    /* サイドバー */
+    /* .side-bar-frame {
+        width: 200px;
+    } */
+
+    /* .side-bar {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    } */
+
+
+    /* 店舗一覧 */
+    .store_image_frame {
+        padding-right: 1rem;
+    }
+
+    .store_inside {
+        display: flex;
+    }
+}

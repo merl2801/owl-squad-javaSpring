@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+/* bodyタグにつけてfooterを必ず一番下に貼り付ける */
+.h-100 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    background-color: lightslategray;
+    clear: both;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    /* 絶対位置を下に固定 */
+    /* position: sticky;
+    top: auto;
+    width: 100%; */
+    margin-top: auto;
+}
+
+.footer_max_frame {
+    max-width: 720px;
+    margin: auto;
+}
+
+/* フッター中身 */
+
+/* ロゴマーク */
+.symbol_mark {
+    text-align: center;
+}
+
+.logo_type {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 57px;
+}
+
+/* twitterリンクカラー */
+a p {
+    color: white;
+}
+
+.text-muted {
+    padding-right: 4px;
+    text-align: center;
+}
+
+/* pc */
+@media (min-width: 575px) {
+
+    .footer-display-flex {
+        display: flex;
+    }
+
+    .symbol_mark {
+        padding-right: 2rem;
+    }
+
+    /* イメージを制限(小さく)する */
+    .symbol_mark #image {
+        max-width: 10em;
+    }
+
+    .logo_type {
+        font-size: 28px;
+    }
+
+
+    .address {
+        padding-right: 2rem;
+    }
+}
+
+/* スマホ・タブレット */
+
+@media (max-width: 575px) {
+
+    .footer-display-flex {
+        padding: 0 0.2rem;
+    }
+
+    .symbol_mark {
+        padding-bottom: 1rem;
+    }
+
+    .address {
+        padding-bottom: 1rem;
+    }
+
+    .text-muted {
+        padding-right: 1rem;
+    }
+
+}

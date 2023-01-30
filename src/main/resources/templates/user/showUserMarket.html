@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layouts/myPageLayouts :: head_fragment(title = 'マイページ')">
+</head>
+
+<body class="h-100">
+
+    <!-- ヘッダーレイアウト -->
+    <header th:replace="layouts/myPageLayouts :: header_fragment"></header>
+
+    <main class="container">
+
+        <div class="max_frame">
+
+            <div class="content-display-flex">
+
+                <!-- サイドバー -->
+                <div class="side-bar-frame">
+                    <div class="side-bar bg-light">
+                        <span class="fs-4 text-center">メニュー</span>
+                        <hr>
+                        <ul class="nav nav-pills flex-column mb-auto">
+                            <li>
+                                <a th:href="@{/user/mypage}" class="nav-link link-dark">
+                                    メールアドレス
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/user/showUserMarketById/{id}(id=${userMarket.id})}"
+                                    class="nav-link link-dark" aria-current="page">
+                                    店舗登録
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active" aria-current="page">
+                                    店舗詳細
+                                </a>
+                            </li>
+                        </ul>
+
+                        <hr>
+                        <a th:href="@{/logout}" class="btn btn-primary"> ログアウト </a>
+                    </div>
+                </div>
+
+                <!-- メインコンテンツ -->
+                <div class="flex-grow-1">
+                    <div class="main-content bg-light">
+                        <h1 class="text-center p-5">店舗詳細</h1>
+
+                        <form action="" method="post">
+                            <div class="row mb-3">
+                                <div class="form-group col-md-12 ">
+                                    <label class="form-label">店舗名</label>
+                                    <p class="form-control" th:text="${userMarket.name}"></p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="form-group col-md-12 ">
+                                    <label class="form-label">住所</label>
+                                    <label class="form-control" th:text="${userMarket.address}"></label>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label" for="Inputphone">電話番号</label>
+                                    <label class="form-control" th:text="${userMarket.phone}"></label>
+                                </div>
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label" for="Inputtime">営業時間</label>
+                                    <label class="form-control" th:text="${userMarket.time}"></label>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="form-group mb-3">
+                                    <label for="" class="form-label">コメント</label>
+
+                                    <label class="form-control" th:text="${userMarket.description}"></label>
+
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="upload-image alert-warning">
+                                    <label for="" class="form-label">店舗画像</label>
+                                    <span class="text-danger">*</span>
+                                    <img alt="" class="img-fluid " style="max-width: 210px;
+                                    height: auto; object-fit:cover;"
+                                        th:src="@{${'/uploads/' + userMarket.image}}">
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="layouts/footer :: footer_fragment"></footer>
+
+</body>
+
+</html>

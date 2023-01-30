@@ -1,0 +1,57 @@
+body {
+    background: #ecf0f3;
+}
+
+
+.max_frame {
+    max-width: 936px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+
+.side-bar {
+    padding: 12px 8px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.main-content {
+    padding: 12px 20px;
+    border-radius: 20px;
+}
+
+.content_flex {
+    min-height: calc(100vh - 50px);
+}
+
+/* スマホ・タブレット */
+
+@media (max-width: 575px) {
+    .side-bar {
+        margin-bottom: 0.5rem;
+    }
+
+    .main-content {
+        border: 1px solid #dee2e6;
+    }
+
+}
+
+
+/* pc */
+
+@media (min-width: 575px) {
+    .content-display-flex {
+        display: flex;
+    }
+
+    .side-bar-frame {
+        width: 200px;
+    }
+
+    .side-bar {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+}

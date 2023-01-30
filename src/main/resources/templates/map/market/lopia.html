@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owl Search ロピア</title>
+  <link rel="stylesheet" th:href="@{/css/market.css}">
+  <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <div class="aaa">
+    <header>
+      <nav>
+        <ul class="gnavi">
+          <li><a th:href="@{/}">HOME</a></li>
+          <li><a th:href="@{/list}">店舗検索</a></li>
+      </ul>
+      </nav>
+    </header>
+  </div>
+<main>
+<div class="row p-6">
+  <h1>ロピア 希望ヶ丘店</h1>
+</div>
+  <div class="flex1">
+    <!--ロゴと店舗写真-->
+    <div>
+      <figure class="image1"><a href="http://lopia.jp/"><img src="./images/lopia_logo.png" alt=""></a></figure>
+      <figure class="image1"><a href="./images/lopia_image.jpg"><img src="./images/lopia_image.jpg" alt=""></a></figure>
+    </div>
+    
+    <div class="row p-6">
+      <div class="text1">
+        <p>店舗名: ロピア 希望ヶ丘店</p>
+        <p>取扱商品: 青果 精肉 鮮魚 日用品 パン お総菜</p>
+      </div>
+      <div class="text2">
+        <p>住所: 横浜市旭区中希望ヶ丘99 八ッ橋ビル</p>
+        <p>電話番号: 045 - 390 - 3900</p>
+        <p>営業時間: 10:00 ～ 20:00</p>
+          
+      </div>
+    </div>
+  </div>
+
+<div class="row p-6">
+  <h2>チラシ情報</h2>
+  <div class="a">
+    <h4>チラシ情報はありません</h4>
+  </div>
+</div>
+
+
+<div class="row p-6">
+  <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12999.104631350785!2d139.5100923199585!3d35.460335692214585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185769264c94e9%3A0xb1be5a6f54a0abdf!2z44Ot44OU44KiIOW4jOacm-OBjOS4mOW6lw!5e0!3m2!1sja!2sjp!4v1656996615290!5m2!1sja!2sjp" 
+      width="800" 
+      height="600" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>  
+</main>
+  </div>
+</body>
+</html>

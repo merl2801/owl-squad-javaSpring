@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+		<h1>Market Management System</h1>
+		<hr>
+		<h2>更新</h2>
+		<a th:href = "@{/admin/listMarket}" class="btn btn-primary btn-sm mb-3">マップリスト</a>
+
+
+		<form action="#" th:action="@{/admin/updateMarket}" th:object="${market}" enctype="multipart/form-data"
+			method="POST">
+			
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}" />
+			
+			<input type="text" name="name" th:field="*{name}" class="form-control mb-4 col-4">
+				
+				<input type="text" name="address" th:field="*{address}" class="form-control mb-4 col-4">
+				
+				<input type="text" name="lat" th:field="*{lat}" class="form-control mb-4 col-4">
+
+				<input type="text" name="lng" th:field="*{lng}" class="form-control mb-4 col-4">
+
+				<input type="file" name="image" th:field="*{image}" class="form-control mb-4 col-4" required>
+				
+				<input type="text" name="name_req" th:field="*{name_req}" class="form-control mb-4 col-4">
+
+				<button type="submit" class="btn btn-info col-2"> Update Employee</button>
+		</form>
+		
+		<hr>
+		
+	</div>
+</body>
+</html>

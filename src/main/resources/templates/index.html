@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layouts/head :: header-fragment(title = 'Home',links = ~{::link})">
+    </head>
+<body>
+    <div th:replace="layouts/menu :: menu-fragment">
+
+    </div>
+    
+    <main class="container">
+          <!-- タイトル -->
+                <div class = main>
+                
+                <section id="banner">
+                    <div class="container">
+                        <h1 for="">Owl Search</h1>
+                    </div>
+                </section>
+
+                <section id="radio">
+                    <form action="" method="GET">
+                        <div class="container radio">
+                        </div>
+                    </form>
+                    <!-- 検索の部分 -->
+                    <form th:action="@{/searchResult}" method="GET">
+                        <div class="row mb-3 form-field">
+                            <h3 class="form-label">店舗名</h3>
+                            <div>
+                                <span class="text-danger"></span>
+                                <input type="text" class="form-control" name="keyword" th:value="${keyword}" required>
+                            </div>
+                        </div>
+
+                        <div class="button-search d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary">検索</button>
+                        </div>
+                    </form>
+                    <!-- ↑ -->
+                </section>
+                </div>
+            </main>
+
+</body>
+</html>

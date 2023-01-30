@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/marketList.css}" rel="stylesheet">
+    <link th:href="@{/css/footer.css}" rel="stylesheet">
+    <link th:href="@{/css/menu.css}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Webフォント・SVG画像形式読み込み -->
+    <link href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+
+</head>
+
+<body class="h-100">
+	 <div th:replace="layouts/menu :: menu-fragment">
+
+    </div>
+    <!-- タイトル -->
+    <section class="theme mt-3 text-center ">
+        <h1>店舗リスト</h1>
+    </section>
+
+    <div class="max_frame">
+
+
+        <!-- サイドバー -->
+        <aside class="side_bar_frame">
+            <div class="side_bar_content">
+
+                <span class="condition_name">絞り込み</span>
+                <article class="condition_display_flex">
+
+                    <section class="condition_column">
+                        <input type="radio" name="" value="">近い距離
+                        <br>
+                        <input type="radio" name="" value="">遠い距離
+                    </section>
+
+                    <section class="condition_column">
+                        <input type="radio" name="" value="">人気が高い
+                        <br>
+                        <input type="radio" name="" value="">人気が低い
+                    </section>
+
+                    <section class="condition_column">
+                        <input type="radio" name="" value="">近い距離
+                        <br>
+                        <input type="radio" name="" value="">遠い距離
+                    </section>
+
+                </article>
+
+            </div>
+        </aside>
+
+        <main class="">
+
+            <!-- メインコンテンツ -->
+            <section>
+                <div class="one_market_content" th:each="market : ${listSearch}">
+
+                    <!-- 店舗名 -->
+                    <span class="store_name" th:text="${market.name}"></span>
+
+                    <!-- 店舗詳細 -->
+                    <div class="store_inside">
+
+                        <!-- 店舗イメージ -->
+                        <div class="store_image_frame">
+                            <img id="store_image" th:src="@{${'/uploads/' + market.image}}" alt="">
+                        </div>
+
+                        <div class="store_detail">
+                            <ul>
+                                <!-- 説明 -->
+                                <li th:text="${market.description}"></li>
+                                <!-- 住所 -->
+                                <li>住所 <br th:text="${market.address}"></li>
+                                <!-- 営業時間 -->
+                                <li>営業時間 <br th:text="${market.time}"></li>
+                                <!-- 電話番号 -->
+                                <li>電話番号 <br th:text="${market.phone}"></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer th:replace="layouts/footer :: footer_fragment"></footer>
+
+</body>
+
+</html>

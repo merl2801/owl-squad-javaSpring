@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layouts/head :: header-fragment(title = 'Register',links = ~{::link})">
+    </head>
+<body>
+    <div th:replace="layouts/menu :: menu-fragment"></div>
+
+        <div class="map">
+            <a href="./map.jsp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="ionicon map-search" viewBox="0 0 512 512">
+          <path d="M313.27 124.64L198.73 51.36a32 32 0 00-29.28.35L56.51 127.49A16 16 0 0048 141.63v295.8a16 16 0 0023.49 14.14l97.82-63.79a32 32 0 0129.5-.24l111.86 73a32 32 0 0029.27-.11l115.43-75.94a16 16 0 008.63-14.2V74.57a16 16 0 00-23.49-14.14l-98 63.86a32 32 0 01-29.24.35zM328 128v336M184 48v336" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+        </svg>
+            </a>
+        </div>
+    </div>
+    
+    <div class="logo">
+            <a th:href="@{/}">
+                <img th:src="@{/images/Owl_Search.jpg}" alt="">
+
+            </a>
+    </div>
+        <h2 class="text-center p-5">ユーザー登録</h2>
+
+        <main class="container">
+			<div th:if="${param.success}">
+                <div class="alert alert-info">You've successfully registered
+                    to our app!</div>
+            </div>
+            <form th:action="@{/register}" method="post" id="register-form" th:object="${user}">
+
+                <div class="row mb-3">
+                    <div class="form-group col-md-12 ">
+                        <label class="form-label" for="InputName">氏名</label>
+                        <span class="text-danger">*</span>
+                        <input id="InputName" class="form-control" type="text" name="name" th:field="*{name}" required>
+                        <p th:errors="*{name}" class="text-danger"
+                           th:if="${#fields.hasErrors('name')}">
+                        </p>
+                    </div>
+
+                    <div class="form-group col-md-12 ">
+                        <label class="form-label" for="InputEmail">Email</label>
+                        <span class="text-danger">*</span>
+                        <input id="InputEmail" class="form-control" type="email" name="email" th:field="*{email}" required>
+                        <p th:errors="*{email}" class="text-danger"
+                           th:if="${#fields.hasErrors('email')}">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="form-group col-md-12 ">
+                        <label class="form-label" for="InputName">パスワード</label>
+                        <span class="text-danger">*</span>
+                        <input id="InputPassword" class="form-control" type="password" name="password" th:field="*{password}" required>
+                        <p th:errors="*{password}" class="text-danger"
+                           th:if="${#fields.hasErrors('password')}">
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <div class="d-grid mb-3">
+                    <button class="btn btn-primary" type="submit" name="signup" id="signup" value="Register">登録</button>
+                </div>
+                <!-- <a th:href="@{|/login|}" th:text="'Log in'"></a> -->
+    <span th:utext="${successMessage}"></span>
+    <div th:if="${bindingResult!=null && bindingResult.getAllErrors()!=null}">
+      <ul th:each="data : ${bindingResult.getAllErrors()}">
+        <li th:text="${data.getObjectName() + ' :: ' + data.getDefaultMessage()}"></li>
+      </ul>
+    </div>
+
+            </form>
+
+        </main>
+</body>
+</html>

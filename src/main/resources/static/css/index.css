@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+       background: #ecf0f3;
+}
+
+/* .header {
+    padding: 20px 10px;
+}
+
+.header #title {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 50px;
+} */
+
+main label {
+    font-size: 20px;
+}
+
+.main {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+	padding-top:70px;
+ }
+
+#banner .container {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+section .radio{
+  padding-top: 70px;
+}
+
+.container ul li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+
+.container .form-label{
+    text-align: center;
+    padding-bottom: 10px;
+    
+}
+
+.container .form-filed input {
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+    padding: 5px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.container .form-field input {
+    width: 100%;
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px 15px 10px 10px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+
+
+footer .next-page {
+    text-align: center;
+    padding-top: 30px;
+}
+ 

@@ -1,0 +1,141 @@
+/* タブのイラスト設定 */
+@charset "utf-8";
+
+/*==================================================
+共通　横並びのための設定
+===================================*/
+
+.gnavi{
+    display: flex;
+    flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
+    margin:0 0 50px 0;
+    list-style: none;
+}
+
+.gnavi li a{
+    display: block;
+   padding:10px 30px;
+    text-decoration: none;
+    color: #333;
+}
+
+.gnavi li{
+    margin-bottom:20px;
+}
+
+/*==================================================
+　5-3-1 中心から外に線が伸びる（下部）
+===================================*/
+
+.gnavi li a{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+
+.gnavi li.current a,
+.gnavi li a:hover{
+  color:#0481A2;
+}
+
+.gnavi li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background:#ff5e00;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+
+
+/* 横並び */
+
+.flex1 {
+    display: flex; /*横並び*/
+  }
+  .flex1 .image1 {
+    width: 380px; /*画像サイズ指定*/
+    margin: 5px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .flex1{
+    margin: 0 0 0 20px;
+    padding: 0;
+  }
+  
+  .text1{
+    padding: 0.1em 1.5em;
+    margin: 0;
+    border: double 5px #000000;
+  }
+  .text2{
+    padding: 2em 1.5em;
+    margin: 30px 0;
+    border: double 5px #000000;
+  }
+  
+  .flex2 {
+    display: flex; /*横並び*/
+  }
+  .flex2.image2 {
+    width: 800px; /*画像サイズ指定*/
+    margin: 5px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .flex2{
+    margin: 0 0 0 20px;
+    padding: 0;
+  }
+  .a {
+    width: auto;
+    overflow: auto;
+  }
+  
+  h1 {
+    padding: 5px;
+    margin: 10px;
+    background-color: #ff5e00;
+  }
+  
+  h2 {
+    padding: 5px;
+    margin: 10px;
+    background-color: #ff5e00;
+  }
+  h4{
+    padding: 5px;
+    margin: 10px;
+    background-color: #d7d7d7;
+  }
+  
+  .map{
+    padding: 5px;
+    margin: 5px;
+  }
+  .aaa a {
+    list-style: none;
+    text-decoration: none;
+    color: #0084ff;
+    padding: 20px;
+  }
+  
+  .aaa a:hover {
+    color: #ff7b00;
+  }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/head :: header-fragment(title = 'RegisterUserMarket',links = ~{::link})">
+    </head>
+<body>
+        <div th:replace="layouts/menu :: menu-fragment"></div>
+
+        <div class="map">
+            <a href="./map.jsp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="ionicon map-search" viewBox="0 0 512 512">
+          <path d="M313.27 124.64L198.73 51.36a32 32 0 00-29.28.35L56.51 127.49A16 16 0 0048 141.63v295.8a16 16 0 0023.49 14.14l97.82-63.79a32 32 0 0129.5-.24l111.86 73a32 32 0 0029.27-.11l115.43-75.94a16 16 0 008.63-14.2V74.57a16 16 0 00-23.49-14.14l-98 63.86a32 32 0 01-29.24.35zM328 128v336M184 48v336" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+        </svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="logo">
+        <a th:href="@{/}">
+            <img th:src="@{/images/Owl_Search.jpg}" alt="">
+
+        </a>
+</div>
+    <main class="container">        
+        <h1 class="text-center p-5">店舗登録</h1>
+
+        <form th:action="@{/saveUserMarket}" th:object="${userMarket}" method="post" enctype="multipart/form-data">
+            <div class="row mb-3">
+                <div class="form-group col-md-12 ">
+                    <label class="form-label">店舗名</label>
+
+                    <input class="form-control" type="text" name="name" th:field="*{name}" required style="ime-mode:active"> </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-12 ">
+                    <label class="form-label">住所</label>
+
+                    <input class="form-control" type="text" name="address" th:field="*{address}" required style="ime-mode:active"> </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6 ">
+                    <label class="form-label" for="Inputphone">電話番号</label>
+                    <input id="Inputphone" class="form-control" type="num" name="phone" th:field="*{phone}" required>
+                </div>
+
+                <div class="form-group col-md-6 ">
+                    <label class="form-label" for="Inputtime">営業時間</label>
+                    <input id="Inputtime" class="form-control" type="num" name="time" th:field="*{time}" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group mb-3">
+                    <label for="" class="form-label">コメント</label>
+                    <input type="text" class="form-control" name="description" th:field="*{description}" style="ime-mode:active">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="upload-image md-3 alert-warning">
+                    <label for="" class="form-label">店舗画像</label>
+                    <span class="text-danger">*</span>
+                    <input type="file" name="image" th:field="*{image}">
+
+                </div>
+            </div>
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">登録</button>
+            </div>
+
+            <!-- <a href="logout">ログオウ</a> -->
+            <span th:utext="${successMessage}"></span>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
